@@ -1,0 +1,160 @@
+/* Custom color theme */
+html{
+	user-select: none;
+}
+:root {
+  --f7-theme-color: #3252a8;
+  --f7-theme-color-rgb: 50, 82, 168;
+  --f7-theme-color-shade: #294389;
+  --f7-theme-color-tint: #3d62c5;
+}
+.sucess-popup-bottom-text{
+	text-align:center;
+}
+
+.aboutSection{
+	margin:auto;
+	width: 100%;
+	text-align:center;
+}
+
+.settingsDurationLabel{
+	margin: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.settingsLanguageLabel{
+	margin: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.settingssavebtn{
+	background-color: green;
+    color: white;
+    font-weight: bold;
+    width: 50%;
+    margin: auto;
+    height: 39px;
+    font-size: 17px;
+	border-radius: 10px;
+}
+
+/*** CSS of Generated link after send file ***/
+
+.link-container {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  padding-top:490px;
+  text-align:center;
+}
+.copy-text {
+  position:relative;
+  padding:10px;
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:10px;
+  display:flex;
+}
+.copy-text input.text {
+  padding:10px;
+  font-size:18px;
+  color:#555;
+  border:none;
+  outline:none;
+  padding-right:50px;
+  width: 250px;
+}
+.copy-text button {
+  padding:10px;
+  background:#5784f5;
+  color:#fff;
+  font-size:18px;
+  border:none;
+  outline:none;
+  border-radius:10px;
+  cursor:pointer;
+}
+.copy-text button:active {
+  background:#809ce2;
+}
+.copy-text button:before {
+  content:"Copied";
+  position:absolute;
+  top:-45px;
+  right:0px;
+  background:#5c81dc;
+  padding:8px 10px;
+  border-radius:20px;
+  font-size:15px;
+  display:none;
+}
+.copy-text button:after {
+  content:"";
+  position:absolute;
+  top:-20px;
+  right:25px;
+  width:10px;
+  height:10px;
+  background:#5c81dc;
+  transform:rotate(45deg);
+  display:none;
+}
+.copy-text.active button:before,
+.copy-text.active button:after {
+  display:block;
+}
+
+/*** End of CSS of Generated link after send file ***/
+
+
+.back{
+	color: white!important;
+}
+.navbar-bg{
+	background-color: #1a57c7;
+}
+.navbar-inner{
+	color:white;
+}
+.branco{
+	color:white;
+}
+/* Left Panel right border when it is visible by breakpoint */
+.panel-left.panel-in-breakpoint:before {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: rgba(0,0,0,0.1);
+  content: '';
+  z-index: 6000;
+}
+
+/* Hide navbar link which opens left panel when it is visible by breakpoint */
+.panel-left.panel-in-breakpoint ~ .view .navbar .panel-open[data-panel="left"] {
+  display: none;
+}
+
+/*
+  Extra borders for main view and left panel for iOS theme when it behaves as panel (before breakpoint size)
+*/
+.ios .panel-left:not(.panel-in-breakpoint).panel-in ~ .view-main:before,
+.ios .panel-left:not(.panel-in-breakpoint).panel-closing ~ .view-main:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: rgba(0,0,0,0.1);
+  content: '';
+  z-index: 6000;
+}

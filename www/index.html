@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--
+  Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+      https://cordova.apache.org/docs/en/latest/
+  Some notes:
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+      * Enable inline JS: add 'unsafe-inline' to default-src
+  -->
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: content:">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+
+  <meta name="theme-color" content="#fff">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>My App</title>
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" href="assets/icons/favicon.png">
+  
+  
+  <link rel="stylesheet" href="framework7/framework7-bundle.min.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/qty.css">
+  <link rel="stylesheet" href="fa/css/all.css">
+
+</head>
+<body>
+  <div id="app">
+    
+    <!-- Left panel with cover effect -->
+    <div class="panel panel-left panel-cover dark panel-init" data-visible-breakpoint="960">
+      <div class="view view-init" data-name="left">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+              <div class="title">Ephemeral</div>
+            </div>
+          </div>
+          <div class="page-content">
+            
+			<img src="img/logo.png" style="width: 52px; text-align: center; margin: 28px 0px -13px 101px;">
+            
+            <div class="block-title optionstxt">Options</div>
+            <div class="list links-list">
+              <ul>
+                <li>
+                  <a href="/mylinks/" data-view=".view-main" class="panel-close mainmenu_mylinks">My Links</a>
+                </li>
+                <li>
+                  <a href="#" data-view=".view-main" data-popup=".configs-popup" class="popup-open panel-close mainmenu_settings">Settings</a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://play.google.com/store/apps/details?id=com.pedroneto.ephemeral" data-view=".view-main" class="back panel-close link external mainmenu_rate">Rate</a>
+                </li> 
+				<li>
+                  <a href="/contact/" data-view=".view-main" class="panel-close mainmenu_contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+			<div class="block-title abouttxt">About</div>
+			<div class="list links-list">
+              <ul>
+                <li><a href="/about/" class="mainmenu_about">About</a></li>
+                <li><a target="_blank" class="external mainmenu_privacy" href="https://pedronetoweb.com.br/apps-files/ephemeral/privacy/">Privacy</a></li>
+                <li><a target="_blank" class="external mainmenu_terms" href="https://pedronetoweb.com.br/apps-files/ephemeral/terms/">Terms</a></li>
+              </ul>
+            </div>
+			<p style="margin-left: 45px;">Ephemeral, v1.0.2</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Right panel with reveal effect-->
+    <div class="panel panel-right panel-reveal dark">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+              <div class="title">Right Panel</div>
+            </div>
+          </div>
+          <div class="page-content">
+            <div class="block">Right panel content goes here</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main view-init safe-areas">
+      <div class="page" data-name="home">
+        <!-- Top Navbar -->
+        <div class="navbar">
+          <div class="navbar-bg"></div>
+          <div class="navbar-inner">
+            <div class="left">
+              <a href="#" class="link icon-only panel-open" data-panel="left">
+                <i class="icon f7-icons if-not-md">menu</i>
+                <i class="icon material-icons if-md branco">menu</i>
+              </a>
+            </div>
+            <div class="title sliding"><img src="img/logo.png" style="width: 45px;padding-right: 10px;vertical-align: middle;">Ephemeral</div>
+            <div class="right">
+              <a href="#" class="link icon-only panel-open" data-panel="right">
+                <i class="icon f7-icons if-not-md">menu</i>
+                <i class="icon material-icons if-md">menu</i>
+              </a>
+            </div>            
+          </div>
+        </div>
+        
+        <!-- Scrollable page content-->
+        <div class="page-content">
+           
+		   
+		   <div class="block block-strong" style="margin-top:7px;">
+		   <div class="row">
+			   <div class="col text-align-center top-text">					
+					<h1 class="title-header">Ephemeral</h1>
+					<h3 class="intro">Just 1 download. Safe. Private. Ephemeral</h3>
+					
+					<form id="upload-form" style="display:none;" action="index.html" enctype="multipart/form-data" method="POST" class="form-ajax-submit">
+						<input class="input-file" type="file" />
+					</form>
+			   </div>
+		   </div>
+			<div class="row" style="margin-bottom:44px;">
+			  <div class="col text-align-center">
+				<div class="gauge gauge-init"
+				  data-type="circle"
+				  data-value="0"
+				  data-value-text="Upload"
+				  data-value-text-color="#ff9800"
+				  data-border-color="#ff9800"
+				  data-isuploading="false"
+				></div>
+			  </div>		  
+			 </div>
+			 
+			 <!-- Successfull Uploaded Popup-->
+			 <div data-swipe-to-close="to-bottom" class="popup success-upload-popup">
+				 <div class="block" style="text-align: center;">
+					<span class="hereIsYourLinkLabel" style="font-size: 30px; text-align:center;">Here's your link!</span>
+					
+					<div class="check"></div>
+					
+					<div class="link-container">					
+						  <div class="copy-text">
+							<input type="text" class="text generated_link" value="" readonly>
+							<button class="share_success_upload_popup">
+							  <i style="font-size: 19px;" class="fa fa-share-nodes"></i>
+							</button>&nbsp
+							<button class="copy_success_upload_popup">
+							  <i class="fa fa-clone"></i>
+							</button>
+						  </div>
+						  
+						  <div class="sucess-popup-bottom-text">
+							<p><span class="hereIsYourLinkSubP1">Your link expires on</span> <span class="returned_exp_date"></span> <span class="hereIsYourLinkSubP2">or if reach</span> <span class="returned_max_downloads"></span> downloads, <span class="hereIsYourLinkSubP3">downloads (what happens first). Your link was saved on "My links" section</span></p>
+						</div>
+						
+						<button class="success-popup-close-btn" style="background-color: orange; color: white; font-weight: bold; width: 50%!important; margin: auto;height: 39px; font-size: 17px; width: 13px;" class="col button button-raised"><i class="fa-solid fa-x"></i> &nbspClose</button>
+					
+					</div>
+					
+					
+
+				 </div>
+			 </div>
+			 
+			 <!-- Settings Popup -->
+			  <div data-swipe-to-close="to-bottom" class="popup configs-popup">
+	
+				<div class="block">
+				  <div class="chip chip-outline color-blue">
+					  <div class="chip-label chip-label-settings">Settings</div>
+					</div>
+				  <p style="float: right; margin-top: -1px;"><a class="link popup-close" href="#"><i class="fa-solid fa-x" style=" color: red; border: 1px solid;	border-radius: 50%;  padding: 10px;"></i></a></p>
+				  <div style="margin:auto; width:100%; margin-top:7px; text-align:center;">
+					
+					<!--<div style="margin: auto; width: 50%; padding-top:100px;">
+						<br><br>
+						<span>Maximum Downloads</span>
+						  <form style="padding-top: 20px;">
+							<fieldset data-quantity>
+							  <legend>Change quantity</legend>
+							</fieldset>
+						  </form>						  
+					</div>-->
+					
+					<br>
+					<hr></hr>
+					<br>
+					<div class="settingsDurationLabel"><span>🕑 Duration</span></div>
+					  		  
+					  
+					  <div class="row">
+						  <div class="col">
+							  <form style="padding-top: 20px;">
+								
+									<fieldset data-quantity>
+									  <legend>Change quantity</legend>
+									</fieldset>
+							
+							  </form>
+						  </div>
+						  <div class="col">
+							  <select class="duration_period" style=" margin-top: 31px; margin-left: 33px; -webkit-appearance: auto; height: 45px; width: 106px; height: 45px; border: 1px solid; width: 128px;" placeholder="Please choose...">
+								  <option class="settingsDaysLabel" value="d">Days</option>
+								  <option class="settingsWeeksLabel" value="w">Weeks</option>
+								  <option class="settingsMonthsLabel" value="M">Months</option>
+								</select>
+						  </div>
+						</div>
+						  
+						
+						
+						<br><br><br>
+						<hr>
+						<br>
+						
+						<!-- Language Picker -->
+						<div class="item-inner">
+						  <div class="settingsLanguageLabel item-title item-label">🗣️ Language</div><br>
+						  <div class="item-input-wrap input-dropdown-wrap">
+							<select class="language" style="height: 45px;width: 100%;border: 1px solid;" placeholder="Please choose..." class="">
+							  <option value="pt-BR">Português</option>
+							  <option value="en-US">English</option>
+							</select>
+						  </div>
+						</div>
+						
+						<br><br>
+						
+						<button class="settingssavebtn" class="col button button-raised"><i class="fa-solid fa-floppy-disk"></i> &nbspSave</button>
+					  
+					  
+				  </div>
+				</div>
+			  </div>
+			<div class="row cancelUploadButton" style="display:none;">
+				<span style="text-align:center; width:100%;"><button style="background-color: red; color: #fff; font-weight: bold; width: 140px; margin: auto;" class="col button button-raised cancelUploadButtonLabel"><i class="fa-solid fa-gear"></i> &nbspCancel</button></span>
+			</div>
+			 
+			 <div class="row settingsButtonOnHome">
+				  <div class="col text-align-center bottom-text">
+					  <p><span class="file_duration_explain_p1">Files you send will be deleted from server when reach</span> <span style="font-weight:bold;" class="max_downloads"></span> <span class="file_duration_explain_p2">downloads or</span> <span style="font-weight:bold;" class="duration"></span>, <span class="file_duration_explain_p3">what happen first</span></p>
+						<a href="#" data-popup=".configs-popup" class="popup-open"><button style="background-color: blue; color: #fff; font-weight: bold; width: 140px; margin: auto;" class="col button button-raised settingsButtonOnHomeTxt"></button></a>
+						<!--<form>
+							<fieldset data-quantity>
+							  <legend>Change quantity</legend>
+							</fieldset>
+						  </form>-->
+				  </div>		  
+			 </div>
+		 </div>
+		   
+		   
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+  
+  <!-- Framework7 library -->
+  <script src="framework7/framework7-bundle.min.js"></script>
+  
+  
+  <!-- App routes -->
+  <script src="js/routes.js"></script>
+
+  <!-- App scripts -->
+  <script src="js/app.js"></script>
+  <!-- Quantity input -->
+  <script src="js/qty.js" type="module"></script>
+  <script src="js/localStorage.js"></script>
+  <script src="js/lottie-player.js"></script>
+  <script type="text/javascript" src="cordova.js"></script>
+
+
+
+</body>
+</html>
