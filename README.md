@@ -37,9 +37,9 @@
     <br />
     <a href="https://play.google.com/store/apps/details?id=com.pedroneto.ephemeral">Play Store</a>
     ·
-    <a href="https://github.com/pedropamn/Ephemeral/issues">Reportar Bug</a>
+    <a href="https://github.com/pedropamn/Ephemeral/issues">Report a  Bug</a>
     ·
-    <a href="https://github.com/pedropamn/Ephemeral/issues">Sugerir Funcionalidade</a>
+    <a href="https://github.com/pedropamn/Ephemeral/issues">Suggest a feature</a>
   </p>
 </div>
 
