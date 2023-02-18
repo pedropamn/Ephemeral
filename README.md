@@ -30,9 +30,9 @@
   <h1 align="center">Ephemeral</h1>
 
   <p align="center">
-    Share files temporarily on Android
+    Share files temporarily on Android, using file.io API
     <br />
-    <a target="_blank" href="https://play.google.com/store/apps/details?id=com.pedroneto.ephemeral"><img src="https://play.google.com/intl/pt-BR/badges/static/images/badges/pt-br_badge_web_generic.png" alt="Logo" width="150" height="50"></a>
+    <a target="_blank" href="https://play.google.com/store/apps/details?id=com.pedroneto.ephemeral"><img src="https://play.google.com/intl/pt-BR/badges/static/images/badges/pt-br_badge_web_generic.png" alt="Logo" width="150" height="60"></a>
     <br />
     <br />
     <a href="https://play.google.com/store/apps/details?id=com.pedroneto.ephemeral">Play Store</a>
