@@ -50,7 +50,7 @@
 ## Sobre o Projeto
 
 <div align="center">
-  <img src="https://play-lh.googleusercontent.com/8TYnD3sLwsnp5zt8rqI22ae38lQoaArrWAEFFuGcvBFP8zAYtbYPE8KGQOx_FM3R19Q=w526-h296-rw" width="200" height="300" /><img src="https://play-lh.googleusercontent.com/-1TFx47GM9JACjYmDIQGQQbyspx6NgswU_GpU19vERTZ3xIMAajkp-_YJt9cDXhvTw=w526-h296-rw" width="200" height="300"/><img src="https://play-lh.googleusercontent.com/os6thBFSmRzJw6qdY-M8aGEXMHm9kJNFEKEA2t5x5RMinNGAKdH_zUrNgxuWcASTsg=w526-h296-rw" width="200" height="300"/><img src="https://play-lh.googleusercontent.com/zcNp4MzsmVgWUukOVe-Dns11kJv_nROEu4tpipBTrGac8sO44xUBoS2yYunD5Cvd1HlO=w526-h296-rw" width="200" height="300"/><img src="https://play-lh.googleusercontent.com/-_Ii0s2m-LPFjIL9vuwG_Lzps0E8ZakWuwDiXURGNSJpNw5hhS549t7zz_su0-_mbVE=w526-h296-rw" width="200" height="300"/>
+  <img src="https://play-lh.googleusercontent.com/8TYnD3sLwsnp5zt8rqI22ae38lQoaArrWAEFFuGcvBFP8zAYtbYPE8KGQOx_FM3R19Q=w2560-h1440-rw" width="200" height="300" /><img src="https://play-lh.googleusercontent.com/-1TFx47GM9JACjYmDIQGQQbyspx6NgswU_GpU19vERTZ3xIMAajkp-_YJt9cDXhvTw=w526-h296-rw" width="200" height="300"/><img src="https://play-lh.googleusercontent.com/os6thBFSmRzJw6qdY-M8aGEXMHm9kJNFEKEA2t5x5RMinNGAKdH_zUrNgxuWcASTsg=w526-h296-rw" width="200" height="300"/><img src="https://play-lh.googleusercontent.com/zcNp4MzsmVgWUukOVe-Dns11kJv_nROEu4tpipBTrGac8sO44xUBoS2yYunD5Cvd1HlO=w2560-h1440-rw" width="200" height="300"/><img src="https://play-lh.googleusercontent.com/-_Ii0s2m-LPFjIL9vuwG_Lzps0E8ZakWuwDiXURGNSJpNw5hhS549t7zz_su0-_mbVE=w526-h296-rw" width="200" height="300"/>
 </div>
 
 <br><br>
