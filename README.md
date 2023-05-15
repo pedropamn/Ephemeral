@@ -104,7 +104,6 @@ The project was made with the following Cordova Plugins:
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Redesign Tutorial Mode
 - [x] Compatibility with Android 12+
 - [ ] Download link for app on share
 - [ ] New upload source
