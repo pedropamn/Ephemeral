@@ -105,12 +105,11 @@ The project was made with the following Cordova Plugins:
 ## Roadmap
 
 - [x] Compatibility with Android 12+
+- [ ] Add a "Remove all expired" button
+- [ ] Icons on menu
 - [ ] Download link for app on share
 - [ ] New upload source
 - [ ] Remote lang file
-- [ ] Redesign Settings Screen
-- [ ] Icons on menu
-- [ ] "Remove all expired" button
 - [ ] Adjust date to US format when in English
 - [ ] Fix alignment on larger screens
 - [ ] If the mobile language is English, launch the app in English
