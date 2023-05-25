@@ -105,6 +105,8 @@ The project was made with the following Cordova Plugins:
 ## Roadmap
 
 - [x] Compatibility with Android 12+
+- [ ] Improve "Copy"
+- [ ] Improve "About" section
 - [ ] Add a "Remove all expired" button
 - [ ] Icons on menu
 - [ ] Download link for app on share
