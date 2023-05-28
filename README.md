@@ -127,6 +127,9 @@ You'll need to change the following lines on `app.js`:
 * `ONESIGNALAPPID` with your own OneSignal APP ID
 * `adUnitId: 'ca-app-pub-1111111111111111/2222222222222222'`, for your own Google AdMob ID
 
+<!-- KNOWN ISSUES -->
+## Known Issues
+* If you cancel an upload and retry with the same file, nothing happens
 
 <!-- CONTRIBUTING -->
 ## Contribute
@@ -136,8 +139,6 @@ You'll need to change the following lines on `app.js`:
 3. Commit (`git commit -m 'Add some AmazingFeature'`)
 4. Push (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
