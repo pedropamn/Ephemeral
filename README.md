@@ -105,11 +105,12 @@ The project was made with the following Cordova Plugins:
 ## Roadmap
 
 - [x] Compatibility with Android 12+
-- [ ] Improve "Copy"
-- [ ] Improve "About" section
-- [ ] Add a "Remove all expired" button
-- [ ] Icons on menu
-- [ ] Download link for app on share
+- [x] Improve "Copy"
+- [x] Improve "About" section
+- [x] Add a "Remove all" and "Remove expired" buttons
+- [x] Icons on menu
+- [x] Download link pointing to app store on share
+- [x] Visual improvement with lottie files
 - [ ] New upload source
 - [ ] Remote lang file
 - [ ] Adjust date to US format when in English
