@@ -44,57 +44,106 @@
               <div class="title">Ephemeral</div>
             </div>
           </div>
-          <div class="page-content">
+          <div class="page-content"> 
             
 			<img src="img/logo.png" style="width: 52px; text-align: center; margin: 28px 0px -13px 101px;">
             
             <div class="block-title optionstxt">Options</div>
             <div class="list links-list">
-              <ul>
-                <li>
-                  <a href="/mylinks/" data-view=".view-main" class="panel-close mainmenu_mylinks">My Links</a>
-                </li>
-                <li>
-                  <a href="#" data-view=".view-main" data-popup=".configs-popup" class="popup-open panel-close mainmenu_settings">Settings</a>
-                </li>
-                <li>
-                  <a target="_blank" href="https://play.google.com/store/apps/details?id=com.pedroneto.ephemeral" data-view=".view-main" class="back panel-close link external mainmenu_rate">Rate</a>
-                </li> 
+              <ul>			  
 				<li>
-                  <a href="/contact/" data-view=".view-main" class="panel-close mainmenu_contact">Contact</a>
-                </li>
+				  <a href="/mylinks/" data-view=".view-main" class="panel-close">
+					  <div class="item-content">
+						<div class="item-media"><span class="circle red"><i class="fa-solid fa-link"></i></span></div>
+						<div class="item-inner">
+						  <div class="item-title mainmenu_mylinks">My links</div>
+						</div>
+					  </div>
+					</a>
+				</li>
+				
+				<li>
+				  <a href="#" data-view=".view-main" data-popup=".configs-popup" class="popup-open panel-close">
+					  <div class="item-content">
+						<div class="item-media"><span class="circle green"><i class="fa-solid fa-gear"></i></span></div>
+						<div class="item-inner">
+						  <div class="item-title mainmenu_settings">Settings</div>
+						</div>
+					  </div>
+					</a>
+				</li>
+				
+				<li>
+				  <a target="_blank" href="https://play.google.com/store/apps/details?id=com.pedroneto.ephemeral" data-view=".view-main" class="back panel-close link external">
+					  <div class="item-content">
+						<div class="item-media"><span class="circle orange"><i class="fa-solid fa-star"></i></span></div>
+						<div class="item-inner">
+						  <div class="item-title mainmenu_rate">Rate</div>
+						</div>
+					  </div>
+					</a>
+				</li>
+				
+				<li>
+				  <a  href="/contact/" data-view=".view-main" class="panel-close">
+					  <div class="item-content">
+						<div class="item-media"><span class="circle blue"><i class="fa-solid fa-envelope"></i></span></div>
+						<div class="item-inner">
+						  <div class="item-title mainmenu_contact">Contact</div>
+						</div>
+					  </div>
+					</a>
+				</li>
+			
               </ul>
             </div>
 			<div class="block-title abouttxt">About</div>
 			<div class="list links-list">
-              <ul>
+			<ul>
+                <li>
+				  <a href="/about/" data-view=".view-main" class="panel-close">
+					  <div class="item-content">
+						<div class="item-media"><span class="circle" style=" /* background-color: blue; */"><i class="fa-solid fa-circle-info"></i></span></div>
+						<div class="item-inner">
+						  <div class="item-title mainmenu_about">About</div>
+						</div>
+					  </div>
+					</a>
+				</li>
+                <li>
+				  <a target="_blank" href="https://pedronetoweb.com.br/apps-files/ephemeral/privacy/" data-view=".view-main" class="panel-close external">
+					  <div class="item-content">
+						<div class="item-media"><span class="circle" style=" /* background-color: blue; */"><i class="fa-solid fa-lock"></i></span></div>
+						<div class="item-inner">
+						  <div class="item-title mainmenu_privacy">Privacy</div>
+						</div>
+					  </div>
+					</a>
+				</li>
+                <li>
+				  <a target="_blank" href="https://pedronetoweb.com.br/apps-files/ephemeral/terms/" data-view=".view-main" class="panel-close external">
+					  <div class="item-content">
+						<div class="item-media"><span class="circle" style="/* background-color: blue; */"><i class="fa-solid fa-file-lines"></i></span></div>
+						<div class="item-inner">
+						  <div class="item-title mainmenu_terms">Terms </div>
+						</div>
+					  </div>
+					</a>
+				</li>
+              </ul>
+             
+			<!--<ul>
                 <li><a href="/about/" class="mainmenu_about">About</a></li>
                 <li><a target="_blank" class="external mainmenu_privacy" href="https://pedronetoweb.com.br/apps-files/ephemeral/privacy/">Privacy</a></li>
                 <li><a target="_blank" class="external mainmenu_terms" href="https://pedronetoweb.com.br/apps-files/ephemeral/terms/">Terms</a></li>
-              </ul>
+              </ul>-->
             </div>
-			<p style="margin-left: 45px;">Ephemeral, v1.0.2</p>
+			<p style="margin-left: 45px;">Ephemeral <span class="version"></span></p> 
           </div>
         </div>
       </div>
     </div>
-  
-    <!-- Right panel with reveal effect-->
-    <div class="panel panel-right panel-reveal dark">
-      <div class="view">
-        <div class="page">
-          <div class="navbar">
-            <div class="navbar-bg"></div>
-            <div class="navbar-inner">
-              <div class="title">Right Panel</div>
-            </div>
-          </div>
-          <div class="page-content">
-            <div class="block">Right panel content goes here</div>
-          </div>
-        </div>
-      </div>
-    </div>
+
     
     <!-- Your main view, should have "view-main" class -->
     <div class="view view-main view-init safe-areas">
@@ -108,26 +157,21 @@
                 <i class="icon f7-icons if-not-md">menu</i>
                 <i class="icon material-icons if-md branco">menu</i>
               </a>
-            </div>
+            </div>			
             <div class="title sliding"><img src="img/logo.png" style="width: 45px;padding-right: 10px;vertical-align: middle;">Ephemeral</div>
-            <div class="right">
-              <a href="#" class="link icon-only panel-open" data-panel="right">
-                <i class="icon f7-icons if-not-md">menu</i>
-                <i class="icon material-icons if-md">menu</i>
-              </a>
-            </div>            
+                     
           </div>
         </div>
         
         <!-- Scrollable page content-->
-        <div class="page-content">
+        <div class="page-content" style="background: url(img/circuits.gif); background-size: cover; overflow: visible;">
            
 		   
-		   <div class="block block-strong" style="margin-top:7px;">
+		   <div class="block block-strong" style="margin-top:47px; background: transparent;">
 		   <div class="row">
 			   <div class="col text-align-center top-text">					
-					<h1 class="title-header">Ephemeral</h1>
-					<h3 class="intro">Just 1 download. Safe. Private. Ephemeral</h3>
+					<!--<h1 class="title-header">Ephemeral</h1>-->
+					<h3 class="intro" style="text-shadow: 1px 1px 1px black;">Just 1 download. Safe. Private. Ephemeral</h3>
 					
 					<form id="upload-form" style="display:none;" action="index.html" enctype="multipart/form-data" method="POST" class="form-ajax-submit">
 						<input class="input-file" type="file" />
@@ -143,6 +187,7 @@
 				  data-value-text-color="#ff9800"
 				  data-border-color="#ff9800"
 				  data-isuploading="false"
+				  data-bg-color="white"
 				></div>
 			  </div>		  
 			 </div>
@@ -162,6 +207,9 @@
 							</button>&nbsp
 							<button class="copy_success_upload_popup">
 							  <i class="fa fa-clone"></i>
+							</button>&nbsp
+							<button class="download_success_upload_popup">
+							  <i class="fa-solid fa-download"></i>
 							</button>
 						  </div>
 						  
@@ -170,6 +218,9 @@
 						</div>
 						
 						<button class="success-popup-close-btn" style="background-color: orange; color: white; font-weight: bold; width: 50%!important; margin: auto;height: 39px; font-size: 17px; width: 13px;" class="col button button-raised"><i class="fa-solid fa-x"></i> &nbspClose</button>
+						
+						
+						<lottie-player src="img/colleagues.json" background="transparent" speed="1" style="width: 300px;height: 300px;margin:auto;margin-bottom: -225px;" loop="" autoplay="" class=""></lottie-player>
 					
 					</div>
 					
@@ -215,7 +266,7 @@
 							  </form>
 						  </div>
 						  <div class="col">
-							  <select class="duration_period" style=" margin-top: 31px; margin-left: 33px; -webkit-appearance: auto; height: 45px; width: 106px; height: 45px; border: 1px solid; width: 128px;" placeholder="Please choose...">
+							  <select class="duration_period" style=" margin-top: 21px; margin-left: 20px; -webkit-appearance: auto; height: 45px; width: 106px; height: 45px; border: 1px solid; width: 142px; text-align: center; height: 58px; font-size: 25px;" placeholder="Please choose...">
 								  <option class="settingsDaysLabel" value="d">Days</option>
 								  <option class="settingsWeeksLabel" value="w">Weeks</option>
 								  <option class="settingsMonthsLabel" value="M">Months</option>
@@ -233,9 +284,9 @@
 						<div class="item-inner">
 						  <div class="settingsLanguageLabel item-title item-label">🗣️ Language</div><br>
 						  <div class="item-input-wrap input-dropdown-wrap">
-							<select class="language" style="height: 45px;width: 100%;border: 1px solid;" placeholder="Please choose..." class="">
-							  <option value="pt-BR">Português</option>
-							  <option value="en-US">English</option>
+							<select class="language" style="height: 45px;width: 100%;border: 1px solid; text-align: center; font-size: 25px;" placeholder="Please choose..." class="">
+							  <option value="pt-BR">🇧🇷 Português</option>
+							  <option value="en-US">🇺🇸 English</option>
 							</select>
 						  </div>
 						</div>
@@ -264,7 +315,8 @@
 				  </div>		  
 			 </div>
 		 </div>
-		   
+		   <lottie-player class="lottie-sharing" src="img/sharing.json" background="transparent" speed="1"  style="width: 300px; height: 300px; margin:auto; margin-top: -43px;" loop autoplay></lottie-player>
+		   <lottie-player class="lottie-uploading" src="img/uploading.json" background="transparent" speed="1"  style="display:none; width: 300px; height: 300px; margin:auto; margin-top: -43px;" loop autoplay></lottie-player>
 		   
         </div>
       </div>

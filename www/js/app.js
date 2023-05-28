@@ -40,6 +40,10 @@ document.addEventListener("deviceready", async () => {
 				console.log('mylinks');
 				app.views.main.router.back();
 				break;
+			case '/about/':
+				console.log('about');
+				app.views.main.router.back();
+				break;
 			case '/index.html':
 				console.log('home');
 				//Check if popup is opened, so close it
@@ -65,7 +69,7 @@ document.addEventListener("deviceready", async () => {
 
 
 	  // App store
-	  store: store,
+	  //store: store,
 	  // App routes
 	  routes: routes,
 	  panel: {
@@ -85,7 +89,8 @@ document.addEventListener("deviceready", async () => {
 		},*/  
 	});
 
-	var appVersion = '1.0.2';
+	var appVersion = '1.0.3';
+	$('.version').text(appVersion);
 
 	 /***************************
 		  FIRST EXECUTION
@@ -301,8 +306,8 @@ document.addEventListener("deviceready", async () => {
 			var jsonLangFileContent = get_lang_file(localStorage.language);	
 			navigator.share({
 				title: jsonLangFileContent.SHARE_LINK_TITLE,
-				text: jsonLangFileContent.SHARE_LINK_TEXT,
-				url: thelink
+				text: langFileContent.SHARE_LINK_TEXT_PART_ONE + thelink + jsonLangFileContent.SHARE_LINK_TEXT_PART_TWO,
+				url: ""
 			}).then((packageNames) => {
 				if (packageNames.length > 0) {
 					console.log("Shared successfully with activity", packageNames[0]);
@@ -317,15 +322,23 @@ document.addEventListener("deviceready", async () => {
 	//Copy button
 	$('.copy_success_upload_popup').click(function(){
 		var langFileContent = get_lang_file(localStorage.language);
-		var thelink = $('.generated_link').val();
-		
-		cordova.plugins.clipboard.copy(thelink);
+		var thelink = $('.generated_link').val();		
+		cordova.plugins.clipboard.copy(langFileContent.SHARE_LINK_TEXT_PART_ONE + thelink + langFileContent.SHARE_LINK_TEXT_PART_TWO);
 		console.log(thelink);
 		var toastBottom = app.toast.create({
 			text: langFileContent.LINK_COPIED,
 			closeTimeout: 2000,
 		});
 		toastBottom.open();
+	})
+	
+	//Download button
+	$('.download_success_upload_popup').click(function(){
+		var langFileContent = get_lang_file(localStorage.language);
+		var thelink = $('.generated_link').val();		
+		app.dialog.confirm(langFileContent.DOWNLOAD_ALERT, function () {
+			window.open(thelink, '_system');
+		});
 	})
 
 
@@ -434,6 +447,10 @@ document.addEventListener("deviceready", async () => {
 			gauge.update({
 				valueText: jsonLangFileContent.WAIT
 			});
+			
+			//Show new Lottie animation
+			$('.lottie-sharing').hide();
+			$('.lottie-uploading').show();
 			
 			//Hide Settings Section on Home
 			$('.cancelUploadButton').show();
@@ -556,6 +573,10 @@ document.addEventListener("deviceready", async () => {
 					//Show Ad
 					interstitial.show();
 					
+					//Change animations
+					$('.lottie-sharing').show();
+					$('.lottie-uploading').hide();
+					
 					
 					//$('.bottom-text').html(parsed.link);
 					console.log("OK");
@@ -658,6 +679,8 @@ document.addEventListener("deviceready", async () => {
 
 	$(document).on('page:init', '.page[data-name="mylinks"]', function (e) {
 		
+		
+		
 		var jsonLangFileContent = get_lang_file(localStorage.language);
 		
 		if(localStorage.mylinks != '[]'){
@@ -681,6 +704,83 @@ document.addEventListener("deviceready", async () => {
 	  var links = localStorage.mylinks;
 	  var array = JSON.parse(links);
 	  $('.mylinksTitle').text(jsonLangFileContent.MY_LINKS_TITLE);
+	  $('.removeAlltxt').text(jsonLangFileContent.REMOVE_BATCH);
+	  
+	  //Undo eventually already created events
+	  app.popover.destroy();
+	  $('body').off('click', '.removeExpired');
+	  $('body').off('click', '.removeAll');
+	  
+	  //The Popover of Batch Links Removal
+	  var popover = app.popover.create({
+			  content: '<div class="popover popover-menu">'+
+							'<div class="popover-angle"></div>'+
+							'<div class="popover-inner">'+
+							  '<div class="list">'+
+								'<ul>'+
+								  '<li><a href="#" class="list-button popover-close removeExpired">'+jsonLangFileContent.REMOVE_EXPIRED+'</a></li>'+
+								  '<li><a href="#" class="list-button popover-close removeAll">'+jsonLangFileContent.REMOVE_ALL+'</a></li>'+
+								'</ul>'+
+							  '</div>'+
+							'</div>'+
+						  '</div>'+
+						'</div>'
+		});
+		  
+		  //Handle click of a dynamically created element
+		$('body').on('click', '.removeExpired', function() {						
+			
+			//Confirmation
+			app.dialog.confirm(jsonLangFileContent.REMOVE_EXPIRED_CONFIRMATION_TEXT, jsonLangFileContent.REMOVE_EXPIRED_CONFIRMATION_TITLE, function(){
+				
+				//Check items
+				for(var i=0; i< array.length; i++){
+					
+					var expdate_dma = isotodate(array[i]['expdate']); //dd/mm/aaaa
+					
+					var dateobj= new Date();
+					var today = dateobj.getDate()+'/'+(dateobj.getMonth()+1)+'/'+dateobj.getFullYear();
+					
+					var days_left = datediff(parseDate(today), parseDate(expdate_dma));
+					if(days_left < 0){
+						
+						//It's expired. Remove from array and recreate the JSON
+						removeElementToLocalStorageJSON(localStorage.mylinks, 'mylinks', 'itemid', array[i]['itemid']);
+						
+						//Remove from GUI
+						$('[data-itemid="' + array[i]['itemid'] + '"]').remove();
+					}
+				}
+				
+			});
+			
+			
+			
+			
+		});
+		
+		$('body').on('click', '.removeAll', function() {
+			
+			//Confirmation
+			app.dialog.confirm(jsonLangFileContent.REMOVE_ALL_CONFIRMATION_TEXT, jsonLangFileContent.REMOVE_ALL_CONFIRMATION_TITLE, function(){
+				localStorage.mylinks = '[]';
+				$('.loadlinks').html('<lottie-player style="margin-top: -67px;" src="img/notfound.json" background="transparent" speed="1"  style="width: 100px; height: 100px;" loop autoplay></lottie-player> <p style="margin-top:-257px; text-align:center; font-size: 18px;">'+jsonLangFileContent.MY_LINKS_NO_FILES+'</p> ');
+			});
+			
+			 
+		});
+	  
+	  //Remove all links
+	  $('.batchRemove').click(function(){		  
+		  
+		popover.open();
+		
+		
+		
+	  });
+	  
+	  
+	  
 	  if(array.length < 1){
 		  $('.loadlinks').html('<lottie-player style="margin-top: -67px;" src="img/notfound.json" background="transparent" speed="1"  style="width: 100px; height: 100px;" loop autoplay></lottie-player> <p style="margin-top:-257px; text-align:center; font-size: 18px;">'+jsonLangFileContent.MY_LINKS_NO_FILES+'?</p> ');
 	  }
@@ -768,6 +868,7 @@ document.addEventListener("deviceready", async () => {
 						  '<a '+array[i]['itemid']+'href="#" class="swipeout-delete delete" data-confirm="'+jsonLangFileContent.DELETE_LINK+'" data-confirm-title="Delete?">'+jsonLangFileContent.DELETE+'</a>'+
 						  '<a href="#" class="color-blue copy">'+jsonLangFileContent.COPY+'</a>'+
 						  '<a href="#" class="color-green share">'+jsonLangFileContent.SHARE+'</a>'+
+						  '<a href="#" class="color-black download">Download</a>'+
 						'</div>'+
 					  '</li>';
 					  
@@ -811,7 +912,7 @@ document.addEventListener("deviceready", async () => {
 		  $('.copy').click(function(){
 			  var itemlink = $(this).parents('.saveditem');
 			  var thelink = itemlink.attr('data-itemlink');
-			  cordova.plugins.clipboard.copy(thelink);
+			  cordova.plugins.clipboard.copy(jsonLangFileContent.SHARE_LINK_TEXT_PART_ONE + thelink + jsonLangFileContent.SHARE_LINK_TEXT_PART_TWO);
 			  console.log(thelink);
 			  var toastBottom = app.toast.create({
 				text: jsonLangFileContent.LINK_COPIED,
@@ -821,6 +922,17 @@ document.addEventListener("deviceready", async () => {
 		  
 			  
 		  })
+		  
+		   //Download link
+		  $('.download').click(function(){
+			  var itemlink = $(this).parents('.saveditem');
+			  var thelink = itemlink.attr('data-itemlink');
+			  
+			  app.dialog.confirm(jsonLangFileContent.DOWNLOAD_ALERT, function () {
+					window.open(thelink, '_system');
+			  });		  
+			  
+		  });
 		  
 		  //Open Share dialog
 		  $('.share').click(function(){
@@ -852,8 +964,8 @@ document.addEventListener("deviceready", async () => {
 			var jsonLangFileContent = get_lang_file(localStorage.language);	
 			navigator.share({
 				title: jsonLangFileContent.SHARE_LINK_TITLE,
-				text: jsonLangFileContent.SHARE_LINK_TEXT,
-				url: thelink
+				text: jsonLangFileContent.SHARE_LINK_TEXT_PART_ONE + thelink + jsonLangFileContent.SHARE_LINK_TEXT_PART_TWO,
+				url: ""
 			}).then((packageNames) => {
 				if (packageNames.length > 0) {
 					console.log("Shared successfully with activity", packageNames[0]);
@@ -882,7 +994,7 @@ document.addEventListener("deviceready", async () => {
 		$('.sendmailbtn').text(jsonLangFileContent.SEND_EMAIL_BUTTON)
 		$('.contact_title').text(jsonLangFileContent.TITLE_CONTACT)
 		
-		
+	
 	})
 
 
@@ -891,6 +1003,8 @@ document.addEventListener("deviceready", async () => {
 		var jsonLangFileContent = get_lang_file(localStorage.language);
 		$('.abouTitle').text(jsonLangFileContent.ABOUT);
 		$('.version').text(appVersion);
+		$('.developed_by').text(jsonLangFileContent.DEVELOPED_BY);
+		$('.more_apps_txt').text(jsonLangFileContent.MORE_APPS);
 		
 	})
 });

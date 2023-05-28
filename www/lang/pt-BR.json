@@ -1,7 +1,7 @@
 {
   "HOME_INTRO_MESSAGE": "Compartilhe arquivos que só podem ser baixados uma vez!",
   "WAIT": "Aguarde...",
-  "FILE_DURATION_EXPLAIN_P1": "Os arquivos que enviar serão deletados do servidor quando atingir",
+  "FILE_DURATION_EXPLAIN_P1": "Os arquivos estarão disponíveis para download até atingirem",
   "FILE_DURATION_EXPLAIN_P2": "downloads ou",
   "FILE_DURATION_EXPLAIN_P3": "o que acontecer primeiro",
   "SETTINGS": "Configurar",
@@ -37,7 +37,7 @@
   "EXPIRED": "Expirado",
   "DELETE": "Deletar",
   "COPY": "Copiar",
-  "SHARE": "Compartilhar",
+  "SHARE": "Comp.",
   "DELETE_LINK": "Tem certeza? O item ainda estará disponível via link se ainda não foi baixado e se estiver dentro do prazo de exclusão. Para deletá-lo do servidor, caso ainda não tenha sido, acesse o link e inicie o download",
   "MAX_FILE_SIZE_LIMIT": "O tamanho máximo de arquivo é 2 GB e o seu arquivo tem ",
   "SURE_TO_CANCEL_UPLOAD": "Tem certeza que deseja cancelar o upload?",
@@ -45,6 +45,17 @@
   "TOAST_SWIPE_TEXT": "Arraste os itens para a esquerda para ver mais opções :)",
   "UPLOAD_ERROR":"Ops, algo deu errado. Verifique sua conexão e tente novamente",
   "SHARE_LINK_TITLE":"Compartilhar Link",
-  "SHARE_LINK_TEXT":"Este link só pode ser baixado 1 vez! Gerado com o App Ephemeral"
+  "SHARE_LINK_TEXT_PART_ONE":"🔥 Este arquivo pode ser baixado apenas 1 vez! 🔥 \n",
+  "SHARE_LINK_TEXT_PART_TWO":"\n\n Gerado com o App Ephemeral. Baixe o app em https://bit.ly/3BoxTm7",
+  "REMOVE_BATCH":"Remover vários",
+  "REMOVE_EXPIRED":"Remover expirados",
+  "REMOVE_ALL":"Remover todos",
+  "REMOVE_ALL_CONFIRMATION_TITLE":"Remover todos",
+  "REMOVE_ALL_CONFIRMATION_TEXT":"Isso removerá links expirados e não expirados e não poderá ser desfeito. Se você já enviou links não expirados para alguém e ninguém iniciou o download, o mesmo ainda pode ser acessado. Tem certeza? ",
+  "REMOVE_EXPIRED_CONFIRMATION_TITLE":"Remover expirados",
+  "REMOVE_EXPIRED_CONFIRMATION_TEXT":"Tem certeza?",
+  "DEVELOPED_BY":"Desenvolvido por Pedro Neto",
+  "MORE_APPS":"Mais Apps",
+   "DOWNLOAD_ALERT":"Este arquivo só pode ser baixado uma vez. Se fizer isso, ele não estará mais disponível. Continuar?"
   
 }

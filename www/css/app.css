@@ -158,3 +158,33 @@ html{
   content: '';
   z-index: 6000;
 }
+
+.circle {
+  display: inline-block;
+  width: 40px; /* Ajuste o tamanho conforme necessário */
+  height: 40px; /* Ajuste o tamanho conforme necessário */
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px; /* Ajuste a altura da linha para centralizar o ícone */
+}
+
+.circle.blue {
+  background-color: blue;
+}
+
+.circle.green{
+	background-color: green;
+}
+
+.circle.orange{
+	background-color: orange;
+}
+
+.circle.red{
+	background-color: red;
+}
+
+
+.circle i {
+  color: #fff; /* Cor do ícone */
+}

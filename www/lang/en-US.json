@@ -1,7 +1,7 @@
 {
   "HOME_INTRO_MESSAGE": "Share files that can only be downloaded once!",
   "WAIT": "Wait...",
-  "FILE_DURATION_EXPLAIN_P1": "Files you sent will be deleted from server when reach",
+  "FILE_DURATION_EXPLAIN_P1": "Files you sent will be available until they reach",
   "FILE_DURATION_EXPLAIN_P2": "downloads or",
   "FILE_DURATION_EXPLAIN_P3": "what happen first",
   "SETTINGS": "Settings",
@@ -45,6 +45,16 @@
   "TOAST_SWIPE_TEXT": "Swipe the items left to see more options :)",
   "UPLOAD_ERROR":"Ops, something went wrong. Check your connection and try again ",
   "SHARE_LINK_TITLE":"Share Link",
-  "SHARE_LINK_TEXT":"This link can be downloaded just 1 time! Generated with Ephemeral App"
-
+  "SHARE_LINK_TEXT_PART_ONE":"🔥 This file can be downloaded only once!  🔥 \n",
+  "SHARE_LINK_TEXT_PART_TWO":"\n\nGenerated with Ephemeral App. Download the app in https://bit.ly/3BoxTm7",
+  "REMOVE_BATCH":"Batch Remove",
+  "REMOVE_EXPIRED":"Remove expired",
+  "REMOVE_ALL":"Remove All",
+  "REMOVE_ALL_CONFIRMATION_TITLE":"Remove All",
+  "REMOVE_ALL_CONFIRMATION_TEXT":"It will remove expired and non expired links and can't be undone. If you already sent non expired links to someone and no one started the download, it can still be accessible. Are you sure?",
+  "REMOVE_EXPIRED_CONFIRMATION_TITLE":"Remove expired links",
+  "REMOVE_EXPIRED_CONFIRMATION_TEXT":"Are you sure?",
+  "DEVELOPED_BY":"Developed by Pedro Neto",
+  "MORE_APPS":"More Apps",
+  "DOWNLOAD_ALERT":"This file can be downloaded only once. It'll become unavailable if you do it. Proceed?"
 }
