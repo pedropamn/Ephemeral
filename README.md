@@ -130,7 +130,7 @@ You'll need to change the following lines on `app.js`:
 
 <!-- KNOWN ISSUES -->
 ## Known Issues
-* If you cancel an upload and retry with the same file, nothing happens
+* If you cancel an upload and retry with the same file, nothing happens. You need to choose another file and retry with the original one or close the app
 
 <!-- CONTRIBUTING -->
 ## Contribute
